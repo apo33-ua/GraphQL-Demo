@@ -1,0 +1,350 @@
+/* Estilos compartidos entre todas las vistas */
+
+/* Títulos y encabezados */
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin: 0 0 1.5rem;
+  color: #2d3748;
+}
+
+.intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+/* Búsqueda */
+.search-box {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.search-box input {
+  flex: 2;
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-box button {
+  padding: 1rem 2rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.search-box button:hover:not(:disabled) {
+  background: #5a67d8;
+  transform: translateY(-2px);
+}
+
+.search-box button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Bloques de código */
+.code {
+  background: #2d3748;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.code pre {
+  margin: 0;
+  color: #a0aec0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.code-block {
+  background: #2d3748;
+  border-radius: 12px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.code-block.highlight {
+  border: 3px solid #667eea;
+  background: #1a202c;
+}
+
+.code-block h4 {
+  color: #e2e8f0;
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.code-block pre {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.code-block code {
+  color: #a0aec0;
+}
+
+/* Tarjetas de información */
+.info-card {
+  background: rgba(255,255,255,0.8);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.info-card h4 {
+  margin: 0 0 1rem;
+  color: #2d3748;
+  font-size: 1.2rem;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+/* Tarjetas de repositorio */
+.repo-card {
+  background: #f7fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s;
+}
+
+.repo-card:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+.repo-card.featured {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8eaf6 100%);
+}
+
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+.repo-header h6 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1.2rem;
+}
+
+.repo-card p {
+  color: #4a5568;
+  margin: 0.5rem 0 1rem;
+  line-height: 1.5;
+}
+
+.repo-card a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.repo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Estrellas y métricas */
+.stars {
+  color: #f6ad55;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.language-tag {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.language-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* Enlaces de GitHub */
+.github-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.github-link:hover {
+  transform: translateX(5px);
+}
+
+/* Mensajes de error */
+.error {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.error-state {
+  padding: 2rem;
+}
+
+.error-state h4 {
+  color: #e53e3e;
+  margin: 0 0 1rem;
+}
+
+.error-state pre {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* Estados vacíos y carga */
+.loading-state, .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #718096;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.hint {
+  color: #a0aec0;
+  font-size: 0.95rem !important;
+}
+
+/* Notas y avisos */
+.note {
+  margin: 0.5rem 0 0;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.note.success {
+  background: #c6f6d5;
+  color: #2f855a;
+}
+
+/* Botones generales */
+.btn-load {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-load:hover:not(:disabled) {
+  background: #5a67d8;
+  transform: translateY(-2px);
+}
+
+.btn-load:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Contenedor de resultados */
+.result {
+  margin-top: 2rem;
+}
+
+/* Comentario en código */
+.comment {
+  color: #68d391;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  .search-box {
+    flex-direction: column;
+  }
+  
+  .search-box input,
+  .search-box button {
+    width: 100%;
+  }
+}
