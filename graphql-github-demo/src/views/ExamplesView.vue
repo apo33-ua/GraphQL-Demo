@@ -287,26 +287,7 @@ async function searchRepos() {
   }
 }
 
-async function fetchTrending() {
-  loading.value = true
-  error.value = null
-  trendingData.value = null
 
-  try {
-    const { data, error: err } = await executeQuery(GET_TRENDING_REPOS)
-    
-    if (err) {
-      error.value = err
-    } else {
-      trendingData.value = data.search
-    }
-  } catch (err) {
-    error.value = 'Error al cargar trending'
-    console.error(err)
-  } finally {
-    loading.value = false
-  }
-}
 </script>
 
 <style scoped>
