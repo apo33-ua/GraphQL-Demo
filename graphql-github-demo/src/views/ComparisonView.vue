@@ -6,7 +6,7 @@
     <div class="comparison-grid">
       <!-- REST -->
       <div class="approach-section">
-        <h3 class="rest-title">🔷 REST</h3>
+        <h3 class="rest-title">REST</h3>
         
         <div class="info-card">
           <h4>Estructura</h4>
@@ -18,13 +18,13 @@
         </div>
 
         <div class="info-card">
-          <h4>Ejemplo: Obtener usuario y repos</h4>
+          <h4>Ejemplo: Obtener usuario,repos y followers</h4>
           <div class="code">
             <pre>GET /api/users/octocat
 GET /api/users/octocat/repos
 GET /api/users/octocat/followers</pre>
           </div>
-          <p class="note">⚠️ 3 llamadas HTTP separadas</p>
+          <p class="note">3 llamadas HTTP separadas</p>
         </div>
 
         <div class="info-card">
@@ -39,7 +39,7 @@ GET /api/users/octocat/followers</pre>
 
       <!-- GraphQL -->
       <div class="approach-section highlight">
-        <h3 class="graphql-title">🔶 GraphQL</h3>
+        <h3 class="graphql-title">GraphQL</h3>
         
         <div class="info-card">
           <h4>Estructura</h4>
@@ -65,7 +65,7 @@ GET /api/users/octocat/followers</pre>
   }
 }</pre>
           </div>
-          <p class="note success">✅ Una sola llamada HTTP</p>
+          <p class="note success">Una sola llamada HTTP</p>
         </div>
 
         <div class="info-card">
@@ -80,7 +80,7 @@ GET /api/users/octocat/followers</pre>
     </div>
 
     <div class="practical-demo">
-      <h3>🧪 Demo Práctica</h3>
+      <h3>Demo Práctica</h3>
       <p>Busca repositorios y compara las respuestas</p>
       
       <div class="search-box">
@@ -91,7 +91,7 @@ GET /api/users/octocat/followers</pre>
           @keyup.enter="performSearch"
         >
         <button @click="performSearch" :disabled="loading">
-          {{ loading ? '⏳ Buscando...' : '🔍 Buscar' }}
+          {{ loading ? 'Buscando...' : 'Buscar' }}
         </button>
       </div>
 
@@ -99,9 +99,9 @@ GET /api/users/octocat/followers</pre>
         <div class="result-card">
           <h4>REST Response</h4>
           <div class="stats">
-            <span>⏱️ Tiempo: {{ restTime }}ms</span>
-            <span>📡 Llamadas: {{ restCalls }}</span>
-            <span>📦 Tamaño: ~{{ restSize }}KB</span>
+            <span>Tiempo: {{ restTime }}ms</span>
+            <span>Llamadas: {{ restCalls }}</span>
+            <span>Tamaño: ~{{ restSize }}KB</span>
           </div>
           <div class="json-preview">
             <pre>{{ restDataPreview }}</pre>
@@ -111,9 +111,9 @@ GET /api/users/octocat/followers</pre>
         <div class="result-card highlight">
           <h4>GraphQL Response</h4>
           <div class="stats">
-            <span>⏱️ Tiempo: {{ graphqlTime }}ms</span>
-            <span>📡 Llamadas: 1</span>
-            <span>📦 Tamaño: ~{{ graphqlSize }}KB</span>
+            <span>Tiempo: {{ graphqlTime }}ms</span>
+            <span>Llamadas: 1</span>
+            <span>Tamaño: ~{{ graphqlSize }}KB</span>
           </div>
           <div class="json-preview">
             <pre>{{ graphqlDataPreview }}</pre>

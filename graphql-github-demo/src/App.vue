@@ -36,11 +36,10 @@ function dismissWarning() {
 
     <header class="header">
       <div class="container">
-        <h1>🚀 GraphQL vs REST</h1>
+        <h1>GraphQL vs REST</h1>
         <p class="subtitle">Demo interactiva con GitHub API</p>
         <nav class="nav">
-          <RouterLink to="/">Inicio</RouterLink>
-          <RouterLink to="/comparison">Comparación</RouterLink>
+          <RouterLink to="/">Comparación</RouterLink>
           <RouterLink to="/playground">Playground</RouterLink>
           <RouterLink to="/examples">Ejemplos</RouterLink>
         </nav>
@@ -55,7 +54,7 @@ function dismissWarning() {
     
     <footer class="footer">
       <div class="container">
-        <p>Demo educativa - ADI 2025/26</p>
+        <p>Trabajo Final - ADI 2025/26</p>
       </div>
     </footer>
   </div>

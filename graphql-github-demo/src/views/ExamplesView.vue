@@ -1,6 +1,6 @@
 <template>
   <div class="examples">
-    <h2>💡 Ejemplos Prácticos</h2>
+    <h2>Ejemplos Prácticos</h2>
     <p class="intro">Casos de uso reales con GitHub GraphQL API</p>
 
     <div class="example-tabs">
@@ -10,7 +10,7 @@
         :class="['tab', { active: activeTab === tab.id }]"
         @click="activeTab = tab.id"
       >
-        {{ tab.icon }} {{ tab.name }}
+        {{ tab.name }}
       </button>
     </div>
 
@@ -21,11 +21,11 @@
         <input 
           v-model="username" 
           type="text" 
-          placeholder="Ej: torvalds, gaearon, tj..."
+          placeholder="Ej: torvalds"
           @keyup.enter="fetchUser"
         >
         <button @click="fetchUser" :disabled="loading">
-          {{ loading ? '⏳' : '🔍' }} Buscar
+          {{ loading ? 'Ejecutando...' : 'Buscar' }}
         </button>
       </div>
 
@@ -37,8 +37,8 @@
             <p class="login">@{{ userData.login }}</p>
             <p class="bio">{{ userData.bio }}</p>
             <div class="stats">
-              <span>👥 {{ userData.followers.totalCount }} followers</span>
-              <span>📚 {{ userData.repositories.totalCount }} repos</span>
+              <span>{{ userData.followers.totalCount }} followers</span>
+              <span>{{ userData.repositories.totalCount }} repos</span>
             </div>
             <a :href="userData.url" target="_blank" class="github-link">
               Ver en GitHub →
@@ -78,7 +78,7 @@
           style="flex: 1"
         >
         <button @click="fetchRepo" :disabled="loading">
-          {{ loading ? '⏳' : '🔍' }} Buscar
+          {{ loading ? 'Ejecutando...' : 'Buscar' }}
         </button>
       </div>
 
@@ -93,19 +93,19 @@
               <span class="metric-label">Stars</span>
             </div>
             <div class="metric">
-              <span class="metric-value">🍴 {{ repoData.forkCount }}</span>
+              <span class="metric-value">{{ repoData.forkCount }}</span>
               <span class="metric-label">Forks</span>
             </div>
             <div class="metric">
-              <span class="metric-value">👀 {{ repoData.watchers.totalCount }}</span>
+              <span class="metric-value">{{ repoData.watchers.totalCount }}</span>
               <span class="metric-label">Watchers</span>
             </div>
             <div class="metric">
-              <span class="metric-value">🐛 {{ repoData.issues.totalCount }}</span>
+              <span class="metric-value">{{ repoData.issues.totalCount }}</span>
               <span class="metric-label">Issues</span>
             </div>
             <div class="metric">
-              <span class="metric-value">🔀 {{ repoData.pullRequests.totalCount }}</span>
+              <span class="metric-value">{{ repoData.pullRequests.totalCount }}</span>
               <span class="metric-label">PRs</span>
             </div>
           </div>
@@ -136,7 +136,7 @@
           @keyup.enter="searchRepos"
         >
         <button @click="searchRepos" :disabled="loading">
-          {{ loading ? '⏳' : '🔍' }} Buscar
+          {{ loading ? 'Ejecutando...' : 'Buscar' }}
         </button>
       </div>
 
@@ -168,43 +168,7 @@
       </div>
     </div>
 
-    <!-- Tab: Trending -->
-    <div v-if="activeTab === 'trending'" class="tab-content">
-      <h3>Repositorios más populares</h3>
-      <button @click="fetchTrending" :disabled="loading" class="btn-load">
-        {{ loading ? '⏳ Cargando...' : '🔥 Cargar Top Repos' }}
-      </button>
-
-      <div v-if="trendingData" class="result">
-        <div class="repos-grid">
-          <div 
-            v-for="repo in trendingData.nodes" 
-            :key="repo.nameWithOwner"
-            class="repo-card featured"
-          >
-            <div class="repo-header">
-              <img :src="repo.owner.avatarUrl" :alt="repo.owner.login" class="owner-avatar">
-              <div>
-                <h6>{{ repo.nameWithOwner }}</h6>
-                <span class="stars">⭐ {{ repo.stargazerCount.toLocaleString() }}</span>
-              </div>
-            </div>
-            <p>{{ repo.description || 'Sin descripción' }}</p>
-            <div class="repo-footer">
-              <span 
-                v-if="repo.primaryLanguage" 
-                class="language-tag"
-                :style="{ color: repo.primaryLanguage.color }"
-              >
-                {{ repo.primaryLanguage.name }}
-              </span>
-              <span>🍴 {{ repo.forkCount.toLocaleString() }}</span>
-              <a :href="repo.url" target="_blank">Ver →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     <div v-if="error" class="error">
       {{ error }}
@@ -243,10 +207,10 @@ const searchResults = ref(null)
 const trendingData = ref(null)
 
 const tabs = [
-  { id: 'user', name: 'Usuario', icon: '👤' },
-  { id: 'repo', name: 'Repositorio', icon: '📦' },
-  { id: 'search', name: 'Búsqueda', icon: '🔍' },
-  { id: 'trending', name: 'Trending', icon: '🔥' }
+  { id: 'user', name: 'Usuario', },
+  { id: 'repo', name: 'Repositorio'},
+  { id: 'search', name: 'Búsqueda'}
+
 ]
 
 async function fetchUser() {

@@ -1,16 +1,16 @@
 <template>
   <div class="playground">
-    <h2>🎮 GraphQL Playground</h2>
-    <p class="intro">Escribe tus propias queries y ve los resultados en tiempo real</p>
+    <h2>GraphQL Playground</h2>
+    <p class="intro">Escribe tus propias queries y consulta los resultados en tiempo real</p>
 
     <div class="playground-container">
       <!-- Editor de Query -->
       <div class="query-editor">
         <div class="editor-header">
-          <h3>✏️ Query Editor</h3>
+          <h3>Query Editor</h3>
           <div class="actions">
             <button @click="executeCurrentQuery" :disabled="loading" class="btn-run">
-              {{ loading ? '⏳ Ejecutando...' : '▶️ Ejecutar' }}
+              {{ loading ? 'Ejecutando...' : 'Ejecutar' }}
             </button>
             <select v-model="selectedExample" @change="loadExample" class="example-select">
               <option value="">Ejemplos predefinidos...</option>
@@ -43,9 +43,9 @@
       <!-- Resultados -->
       <div class="results-panel">
         <div class="panel-header">
-          <h3>📊 Resultados</h3>
+          <h3>Resultados</h3>
           <button v-if="result" @click="copyResult" class="btn-copy">
-            {{ copied ? '✅ Copiado' : '📋 Copiar' }}
+            {{ copied ? 'Copiado' : 'Copiar' }}
           </button>
         </div>
         
@@ -55,20 +55,20 @@
         </div>
 
         <div v-else-if="error" class="error-state">
-          <h4>❌ Error</h4>
+          <h4>Error</h4>
           <pre>{{ error }}</pre>
         </div>
 
         <div v-else-if="result" class="result-display">
           <div class="result-meta">
-            <span>⏱️ {{ executionTime }}ms</span>
-            <span>📦 {{ resultSize }}KB</span>
+            <span>{{ executionTime }}ms</span>
+            <span>{{ resultSize }}KB</span>
           </div>
           <pre class="json-output">{{ formattedResult }}</pre>
         </div>
 
         <div v-else class="empty-state">
-          <p>👈 Escribe una query y haz clic en "Ejecutar"</p>
+          <p>Escribe una query y haz clic en "Ejecutar"</p>
           <p class="hint">O selecciona un ejemplo del menú desplegable</p>
         </div>
       </div>
@@ -76,7 +76,7 @@
 
     <!-- Documentación rápida -->
     <div class="quick-docs">
-      <h3>📚 Referencia Rápida</h3>
+      <h3>Referencia Rápida</h3>
       <div class="docs-grid">
         <div class="doc-card">
           <h4>Sintaxis básica</h4>
