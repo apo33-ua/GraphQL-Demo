@@ -51,7 +51,7 @@ GET /api/users/octocat/followers</pre>
         </div>
 
         <div class="info-card">
-          <h4>Ejemplo: Obtener usuario y repos</h4>
+          <h4>Ejemplo: Obtener usuario,repos y followers</h4>
           <div class="code">
             <pre>POST /graphql
 {
